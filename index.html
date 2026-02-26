@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Tích Toán Học</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            color: #111;
+        }
+
+        header {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .formula {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #2c5364;
+            font-size: 20px;
+        }
+
+        .math-symbol {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .mathematicians {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #203a43;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Giải Tích & Hình Học Không Gian</h1>
+        <p>Đạo Hàm • Tích Phân • Diện Tích • Thể Tích</p>
+        </header>
+        
+        <section>
+        <h2>📘 Công Thức Đạo Hàm</h2>
+        
+        <div class="formula">(xⁿ)' = n·xⁿ⁻¹</div>
+        <div class="formula">(sin x)' = cos x</div>
+        <div class="formula">(cos x)' = -sin x</div>
+        <div class="formula">(tan x)' = 1 / cos²x</div>
+        <div class="formula">(eˣ)' = eˣ</div>
+        <div class="formula">(ln x)' = 1/x</div>
+        <div class="formula">(u·v)' = u'v + uv'</div>
+        <div class="formula">(u/v)' = (u'v - uv') / v²</div>
+        <div class="formula">(f(g(x)))' = f'(g(x)) · g'(x)</div>
+        
+        </section>
+        
+        <section>
+        <h2>📗 Công Thức Tích Phân</h2>
+        
+        <div class="formula">∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</div>
+        <div class="formula">∫ sin x dx = -cos x + C</div>
+        <div class="formula">∫ cos x dx = sin x + C</div>
+        <div class="formula">∫ eˣ dx = eˣ + C</div>
+        <div class="formula">∫ 1/x dx = ln|x| + C</div>
+        <div class="formula">∫ aˣ dx = aˣ / ln(a) + C</div>
+        <div class="formula">∫ 1/(1+x²) dx = arctan(x) + C</div>
+        <div class="formula">∫ f'(x)/f(x) dx = ln|f(x)| + C</div>
+        
+        </section>
+        
+        <section>
+        <h2>📐 Công Thức Diện Tích</h2>
+        
+        <div class="formula">Diện tích dưới đường cong: S = ∫[a→b] f(x) dx</div>
+        <div class="formula">Diện tích hình tròn: S = πR²</div>
+        <div class="formula">Diện tích tam giác: S = 1/2 · a · h</div>
+        <div class="formula">Diện tích hình chữ nhật: S = a · b</div>
+        <div class="formula">Diện tích hình elip: S = πab</div>
+        
+        </section>
+        
+        <section>
+        <h2>📦 Công Thức Thể Tích</h2>
+        
+        <div class="formula">Thể tích hình cầu: V = 4/3 · πR³</div>
+        <div class="formula">Thể tích hình trụ: V = πR²h</div>
+        <div class="formula">Thể tích hình nón: V = 1/3 · πR²h</div>
+        <div class="formula">Thể tích khối hộp chữ nhật: V = a · b · c</div>
+        
+        <div class="formula">
+        Thể tích vật thể tròn xoay quanh trục Ox:  
+        V = π ∫[a→b] (f(x))² dx
+        </div>
+        
+        <div class="formula">
+        Thể tích theo phương pháp vỏ trụ:  
+        V = 2π ∫[a→b] x·f(x) dx
+        </div>
+        
+        </section>
+<section>
+    <h2>👨‍🏫 Những Nhà Toán Học Vĩ Đại</h2>
+
+    <div class="mathematicians">
+
+        <div class="card">
+            <img src="newton.jpg" alt="Isaac Newton">
+            <h3>Isaac Newton</h3>
+            <p>Đồng sáng lập Giải Tích học.</p>
+        </div>
+
+        <div class="card">
+            <img src="leibniz.jpg" alt="Leibniz">
+            <h3>G.W. Leibniz</h3>
+            <p>Người phát minh ký hiệu ∫ và d/dx.</p>
+        </div>
+
+        <div class="card">
+            <img src="euler.jpg" alt="Euler">
+            <h3>Leonhard Euler</h3>
+            <p>Đóng góp lớn cho hàm số mũ và giải tích.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 - Trang Web Toán Học Thuần Túy
+</footer>
+
+</body>
+</html>
