@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 3 - Công Thức Diện Tích</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']]
+  }
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right,#eef2f3,#dfe9f3);
+}
+
+header{
+  background: linear-gradient(135deg,#1f4037,#2c5364);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+header h1{
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  margin-top:10px;
+  opacity:0.9;
+}
+
+section{
+  max-width:950px;
+  margin:40px auto;
+  padding:20px;
+}
+
+h2{
+  margin-top:50px;
+  color:#1f4037;
+  border-left:6px solid #2c5364;
+  padding-left:10px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:25px 0;
+  border-radius:15px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.formula{
+  font-size:20px;
+  margin-bottom:15px;
+}
+footer{
+  text-align:center;
+  padding:20px;
+  background:#2c5364;
+  color:white;
+  margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>I. Công Thức Nguyên Hàm</h1>
+<p>Tổng hợp công thức Nguyên Hàm trong Giải Tích</p>
+</header>
+
+<section>
+
+<h2>I. Nguyên Hàm Cơ Bản Trong Giải Tích</h2>
+<div class="card">
+    <div class="formula">\( \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \)</div>
+</div>
+<div class="card">
+    <div class="formula">
+        \( \int (u + v)\,dx = \int u\,dx + \int v\,dx \)
+    </div>
+</div>
+
+<div class="card">
+    <div class="formula">
+        \( \int (u - v)\,dx = \int u\,dx - \int v\,dx \)
+    </div>
+</div>
+
+<div class="card">
+    <div class="formula">
+        \( \int k f(x)\,dx = k \int f(x)\,dx \)
+    </div>
+</div>
+<div class="card">
+    <div class="formula">\( \int \sin x \, dx = -\cos x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \cos x \, dx = \sin x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \tan x \, dx = -\ln|\cos x| + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \cot x \, dx = \ln|\sin x| + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int e^x \, dx = e^x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \frac{1}{x} \, dx = \ln|x| + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int a^x \, dx = \frac{a^x}{\ln a} + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \frac{1}{1+x^2} \, dx = \arctan x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \frac{f'(x)}{f(x)} \, dx = \ln|f(x)| + C \)</div>
+</div>
+<h2>Nguyên Hàm Đổi Biến</h2>
+
+<div class="card">
+    <div class="formula">
+        \( \int u\,dv = uv - \int v\,du \)
+    </div>
+</div>
+
+<p><b>Ý tưởng:</b> Dùng khi tích phân là tích của hai hàm khác loại (ví dụ: đa thức × lượng giác, đa thức × mũ).</p>
+
+<h3>!! Các bước thực hiện !!</h3>
+
+<p><b>Bước 1:</b> Chọn \( u \) (nên chọn hàm dễ đạo hàm)</p>
+<p><b>Bước 2:</b> Phần còn lại đặt \( dv \)</p>
+<p><b>Bước 3:</b> Tính \( du \) và \( v \)</p>
+<p><b>Bước 4:</b> Thay vào công thức</p>
+
+<h3>Ví dụ</h3>
+
+<p>Tính: \( \int x e^x\,dx \)</p>
+
+<p><b>Bước 1:</b> Chọn \( u = x \Rightarrow du = dx \)</p>
+<p><b>Bước 2:</b> \( dv = e^x dx \Rightarrow v = e^x \)</p>
+
+<p><b>!! Áp dụng công thức !!</b></p>
+
+    <div class="formula">
+        \( \int x e^x\,dx = x e^x - \int e^x\,dx \)
+    </div>
+
+<p>Tính tiếp:</p>
+    <div class="formula">
+        \( = x e^x - e^x + C \)
+    </div>
+
+<p>Kết quả:</p>
+    <div class="formula">
+        \( e^x(x - 1) + C \)
+    </div>
+<h2>Nguyên Hàm Từng Phần</h2>
+
+<div class="card">
+    <div class="formula">
+        \( \int u\,dv = uv - \int v\,du \)
+    </div>
+</div>
+
+<p><b>Ý tưởng:</b> Dùng khi tích phân là tích của hai hàm khác loại (ví dụ: đa thức × lượng giác, đa thức × mũ).</p>
+
+<h3>!! Các bước thực hiện !!</h3>
+
+<p><b>Bước 1:</b> Chọn \( u \) (nên chọn hàm dễ đạo hàm)</p>
+<p><b>Bước 2:</b> Phần còn lại đặt \( dv \)</p>
+<p><b>Bước 3:</b> Tính \( du \) và \( v \)</p>
+<p><b>Bước 4:</b> Thay vào công thức</p>
+
+<h3>Ví dụ</h3>
+
+<p>Tính: \( \int x e^x\,dx \)</p>
+
+<p><b>Bước 1:</b> Chọn \( u = x \Rightarrow du = dx \)</p>
+<p><b>Bước 2:</b> \( dv = e^x dx \Rightarrow v = e^x \)</p>
+
+<p><b>!! Áp dụng công thức !!</b></p>
+    <div class="formula">
+        \( \int x e^x\,dx = x e^x - \int e^x\,dx \)
+    </div>
+
+<p>Tính tiếp:</p>
+    <div class="formula">
+        \( = x e^x - e^x + C \)
+</div>
+
+<p>Kết quả:</p>
+
+    <div class="formula">
+        \( e^x(x - 1) + C \)
+    </div>
+</section>
+
+<footer>
+© 2026 - Section 2: Công Thức Nguyên Hàm
+</footer>
+
+</body>
+</html>

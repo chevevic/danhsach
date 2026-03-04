@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 3 - Công Thức Diện Tích</title>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)'], ['$', '$']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right,#eef2f3,#dfe9f3);
+}
+
+header{
+  background: linear-gradient(135deg,#1f4037,#2c5364);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+header h1{
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  margin-top:10px;
+  opacity:0.9;
+}
+
+section{
+  max-width:950px;
+  margin:40px auto;
+  padding:20px;
+}
+
+h2{
+  margin-top:50px;
+  color:#1f4037;
+  border-left:6px solid #2c5364;
+  padding-left:10px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:25px 0;
+  border-radius:15px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.formula{
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.meaning{
+  font-weight:bold;
+  color:#2c5364;
+  margin-bottom:5px;
+}
+
+.desc{
+  color:#444;
+  line-height:1.6;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#2c5364;
+  color:white;
+  margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Section 3: Công Thức Diện Tích</h1>
+<p>Tổng hợp công thức & ý nghĩa sử dụng trong Giải Tích và Hình Học</p>
+</header>
+
+<section>
+
+<h2>I. Diện Tích Trong Giải Tích</h2>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích vùng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục Ox và hai đường thẳng x=a, x=b.
+</div>
+<div class="formula">
+$$ S = \int_{a}^{b} f(x)\,dx $$
+</div>
+</div>
+
+<div class="card">
+<div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích phần nằm giữa hai đồ thị \(y=f(x)\) và \(y=g(x)\).
+</div>
+<div class="formula">
+$$ S = \int_{a}^{b} |f(x) - g(x)|\,dx $$
+</div>
+</div>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích khi miền được mô tả theo biến y (tích phân theo dy).
+</div>
+<div class="formula">
+$$ S = \int_{c}^{d} (x_{phải} - x_{trái})\,dy $$
+</div>
+</div>
+
+<h2>II. Diện Tích Hình Học Phẳng</h2>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích hình tròn có bán kính R.
+</div>
+<div class="formula">
+$$ S_{hình\ tròn} = \pi R^2 $$
+</div>
+</div>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích tam giác khi biết cạnh đáy a và chiều cao h.
+</div>
+<div class="formula">
+$$ S_{tam\ giác} = \frac{1}{2}ah $$
+</div>
+</div>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích tam giác khi biết độ dài 3 cạnh (công thức Heron).
+</div>
+<div class="formula">
+$$ p = \frac{a+b+c}{2} $$
+<br>
+$$ S = \sqrt{p(p-a)(p-b)(p-c)} $$
+</div>
+</div>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích tam giác khi biết tọa độ 3 đỉnh A(x₁,y₁), B(x₂,y₂), C(x₃,y₃).
+Nếu S = 0 thì 3 điểm thẳng hàng.
+</div>
+<div class="formula">
+$$
+S =
+\frac{1}{2}
+\left|
+x_1(y_2 - y_3)
++ x_2(y_3 - y_1)
++ x_3(y_1 - y_2)
+\right|
+$$
+</div>
+</div>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích hình chữ nhật với chiều dài a và chiều rộng b.
+</div>
+<div class="formula">
+$$ S_{hình\ chữ\ nhật} = ab $$
+</div>
+</div>
+
+<div class="card">
+  <div class="meaning">Dùng để tính:</div>
+<div class="desc">
+Diện tích hình thang với hai đáy a, b và chiều cao h.
+</div>
+<div class="formula">
+$$ S_{hình\ thang} = \frac{(a+b)h}{2} $$
+</div>
+</div>
+
+</section>
+
+<footer>
+© 2026 - Section 3: Công Thức Diện Tích
+</footer>
+
+</body>
+</html>
