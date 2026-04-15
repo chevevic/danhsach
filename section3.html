@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Section 3 - Công Thức Diện Tích</title>
+<title>Diện Tích - Giải Tích</title>
 
-<!-- MathJax -->
 <script>
 window.MathJax = {
   tex: {
@@ -18,21 +17,23 @@ window.MathJax = {
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right,#eef2f3,#dfe9f3);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background:#f8fafc;
+  color:#1e293b;
 }
 
+/* HEADER */
 header{
-  background: linear-gradient(135deg,#1f4037,#2c5364);
+  background: linear-gradient(135deg,#4f46e5,#3b82f6);
   color:white;
   text-align:center;
-  padding:40px 20px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  padding:60px 20px;
 }
 
 header h1{
   margin:0;
-  font-size:30px;
+  font-size:36px;
+  font-weight:700;
 }
 
 header p{
@@ -40,148 +41,147 @@ header p{
   opacity:0.9;
 }
 
+/* BACK */
+.back-home{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: white;
+    color: #4f46e5;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    border:1px solid #e2e8f0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* CONTENT */
 section{
-  max-width:950px;
-  margin:40px auto;
+  max-width:900px;
+  margin:50px auto;
   padding:20px;
 }
 
+/* TITLE */
 h2{
   margin-top:50px;
-  color:#1f4037;
-  border-left:6px solid #2c5364;
-  padding-left:10px;
+  font-size:24px;
 }
 
+/* CARD */
 .card{
   background:white;
   padding:20px;
-  margin:25px 0;
-  border-radius:15px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
-  transition:0.3s;
+  margin:20px 0;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  border:1px solid #e2e8f0;
+  transition:0.2s;
 }
 
+.card:hover{
+  transform: translateY(-4px);
+}
+
+/* LABEL */
+.meaning{
+  font-weight:600;
+  color:#4f46e5;
+  margin-bottom:6px;
+}
+
+/* DESC */
+.desc{
+  color:#475569;
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+/* FORMULA */
 .formula{
   font-size:20px;
-  margin-bottom:15px;
+  text-align:center;
 }
 
-.meaning{
-  font-weight:bold;
-  color:#2c5364;
-  margin-bottom:5px;
-}
-
-.desc{
-  color:#444;
-  line-height:1.6;
-}
-.back-home{
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    background: #4CAF50;
-    color: white;
-    padding: 8px 14px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 14px;
-    z-index: 999;
-}
+/* FOOTER */
 footer{
   text-align:center;
-  padding:20px;
-  background:#2c5364;
+  padding:25px;
+  background:#1e293b;
   color:white;
-  margin-top:50px;
+  margin-top:60px;
 }
 </style>
 </head>
 
 <body>
 
+<a href="home.html" class="back-home">← Trang chủ</a>
+
 <header>
-<h1>Section 3: Công Thức Diện Tích</h1>
-<p>Tổng hợp công thức & ý nghĩa sử dụng trong Giải Tích và Hình Học</p>
+<h1>Công Thức Diện Tích</h1>
+<p>Giải tích + hình học, tổng hợp dễ hiểu</p>
 </header>
-<a href="home.html" class="back-home">Trang chủ</a>
+
 <section>
 
-<h2>I. Diện Tích Trong Giải Tích</h2>
+<h2>Diện tích trong giải tích</h2>
 
 <div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích vùng giới hạn bởi đồ thị hàm số \(y=f(x)\), trục Ox và hai đường thẳng x=a, x=b.
-</div>
-<div class="formula">
-$$ S = \int_{a}^{b} f(x)\,dx $$
-</div>
-</div>
-
-<div class="card">
-<div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích phần nằm giữa hai đồ thị \(y=f(x)\) và \(y=g(x)\).
-</div>
-<div class="formula">
-$$ S = \int_{a}^{b} |f(x) - g(x)|\,dx $$
-</div>
+  <div class="meaning">Áp dụng khi:</div>
+  <div class="desc">
+    Tính diện tích dưới đồ thị \(y=f(x)\) từ \(a\) đến \(b\)
+  </div>
+  <div class="formula">
+    $$ S = \int_a^b f(x)\,dx $$
+  </div>
 </div>
 
 <div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích khi miền được mô tả theo biến y (tích phân theo dy).
-</div>
-<div class="formula">
-$$ S = \int_{c}^{d} (x_{phải} - x_{trái})\,dy $$
-</div>
-</div>
-
-<h2>II. Diện Tích Hình Học Phẳng</h2>
-
-<div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích hình tròn có bán kính R.
-</div>
-<div class="formula">
-$$ S_{hình\ tròn} = \pi R^2 $$
-</div>
+  <div class="meaning">Áp dụng khi:</div>
+  <div class="desc">
+    Tính diện tích giữa hai đồ thị \(f(x)\) và \(g(x)\)
+  </div>
+  <div class="formula">
+    $$ S = \int_a^b |f(x)-g(x)|\,dx $$
+  </div>
 </div>
 
 <div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích tam giác khi biết cạnh đáy a và chiều cao h.
+  <div class="meaning">Áp dụng khi:</div>
+  <div class="desc">
+    Miền được mô tả theo trục \(y\)
+  </div>
+  <div class="formula">
+    $$ S = \int_c^d (x_{phải}-x_{trái})\,dy $$
+  </div>
 </div>
-<div class="formula">
-$$ S_{tam\ giác} = \frac{1}{2}ah $$
-</div>
+
+<h2>Diện tích hình học</h2>
+
+<div class="card">
+  <div class="meaning">Hình tròn</div>
+  <div class="formula">$$ S = \pi R^2 $$</div>
 </div>
 
 <div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích tam giác khi biết độ dài 3 cạnh (công thức Heron).
-</div>
-<div class="formula">
-$$ p = \frac{a+b+c}{2} $$
-<br>
-$$ S = \sqrt{p(p-a)(p-b)(p-c)} $$
-</div>
+  <div class="meaning">Tam giác (đáy - cao)</div>
+  <div class="formula">$$ S = \frac{1}{2}ah $$</div>
 </div>
 
 <div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích tam giác khi biết tọa độ 3 đỉnh A(x₁,y₁), B(x₂,y₂), C(x₃,y₃).
-Nếu S = 0 thì 3 điểm thẳng hàng.
+  <div class="meaning">Tam giác (Heron)</div>
+  <div class="desc">Với \(p = \frac{a+b+c}{2}\)</div>
+  <div class="formula">
+    $$ S = \sqrt{p(p-a)(p-b)(p-c)} $$
+  </div>
 </div>
-<div class="formula">
+
+<div class="card">
+  <div class="meaning">Tam giác tọa độ</div>
+  <div class="desc">Nếu S = 0 → 3 điểm thẳng hàng</div>
+  <div class="formula">
 $$
 S =
 \frac{1}{2}
@@ -191,33 +191,23 @@ x_1(y_2 - y_3)
 + x_3(y_1 - y_2)
 \right|
 $$
-</div>
-</div>
-
-<div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích hình chữ nhật với chiều dài a và chiều rộng b.
-</div>
-<div class="formula">
-$$ S_{hình\ chữ\ nhật} = ab $$
-</div>
+  </div>
 </div>
 
 <div class="card">
-  <div class="meaning">Dùng để tính:</div>
-<div class="desc">
-Diện tích hình thang với hai đáy a, b và chiều cao h.
+  <div class="meaning">Hình chữ nhật</div>
+  <div class="formula">$$ S = ab $$</div>
 </div>
-<div class="formula">
-$$ S_{hình\ thang} = \frac{(a+b)h}{2} $$
-</div>
+
+<div class="card">
+  <div class="meaning">Hình thang</div>
+  <div class="formula">$$ S = \frac{(a+b)h}{2} $$</div>
 </div>
 
 </section>
 
 <footer>
-© 2026 - Section 3: Công Thức Diện Tích
+© 2026 - Công Thức Diện Tích
 </footer>
 
 </body>
