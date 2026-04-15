@@ -3,157 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <title>Giải Tích Toán Học</title>
+
+    <!-- MathJax -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-        import { Analytics } from "@vercel/analytics/next"
-    </script>
+
+    <!-- View counter -->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     <style>
         body {
-            font-family: Helvetica;
-            background-color: #f4f6f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8fafc;
             margin: 0;
-            padding: 0;
-            color: #111;
+            color: #1e293b;
         }
 
+        /* HEADER */
         header {
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(135deg, #4f46e5, #3b82f6);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 70px 20px;
         }
 
         h1 {
             margin: 0;
-            font-size: 40px;
+            font-size: 42px;
+            font-weight: 700;
         }
 
+        header p {
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* MENU */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px auto;
+            flex-wrap: wrap;
+            max-width: 1100px;
+        }
+
+        .box {
+            width: 260px;
+            height: 260px;
+            background: white;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.25s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .box .big {
+            font-size: 32px;
+            margin-top: 8px;
+            color: #4f46e5;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        /* SECTION TITLE */
+        h2 {
+            text-align: center;
+            margin-top: 70px;
+            font-size: 28px;
+        }
+
+        /* CARDS */
         .mathematicians {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px auto 80px;
+            max-width: 1100px;
         }
 
         .card {
+            width: 260px;
             background: white;
-            padding: 20px;
-            margin: 20px;
-            width: 250px;
+            border-radius: 18px;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
         }
 
         .card img {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
         }
 
+        .card h3 {
+            margin: 15px 0 5px;
+        }
+
+        .card p {
+            padding: 0 15px 20px;
+            color: #64748b;
+        }
+
+        /* VIEW COUNTER */
+        #view-counter {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 20px;
-            background: #203a43;
+            padding: 25px;
+            background: #1e293b;
             color: white;
         }
-        .menu{
-    display: flex;
-    justify-content: center;   /* căn giữa ngang */
-    gap: 40px;                 /* khoảng cách giữa các box */
-    margin: 60px 0;            /* cách header và phần dưới */
-    flex-wrap: wrap;           /* tự xuống hàng nếu màn hình nhỏ */
-}
-
-.box{
-    display: flex;
-    width: 320px;
-    height: 320px;
-    background-color: #7c99be;
-    color: white;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    text-align: center;
-    transition: 0.3s;
-    flex-direction: column;
-}
-#view-counter{
-position:fixed;
-bottom:10px;
-right:10px;
-background:rgba(0,0,0,0.75);
-color:white;
-padding:6px 10px;
-border-radius:8px;
-font-size:14px;
-font-family:sans-serif;
-z-index:9999;
-}
-.box:hover{
-    transform: scale(1.05);
-    background-color: #5f7fa8;
-}
-h2{
-    text-align: center;
-    margin-top: 40px;
-}
-.box .big {
-    font-size : 50px;
-}
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Giải Tích & Hình Học Không Gian</h1>
-        <p>Đạo Hàm • Tích Phân • Diện Tích • Thể Tích</p>
-        </header>
+
+<header>
+    <h1>Giải Tích & Hình Học Không Gian</h1>
+    <p>Đạo Hàm • Tích Phân • Diện Tích • Thể Tích</p>
+</header>
+
 <div class="menu">
     <a href="section1.html" class="box">
-        Công thức<br><div class="big">ĐẠO HÀM</div>
+        Công thức
+        <div class="big">ĐẠO HÀM</div>
     </a>
 
     <a href="section2.html" class="box">
-        Công thức<br><div class="big">NGUYÊN HÀM</div>
+        Công thức
+        <div class="big">NGUYÊN HÀM</div>
     </a>
 
     <a href="section3.html" class="box">
-        Công thức<br><div class="big">DIỆN TÍCH</div>
+        Công thức
+        <div class="big">DIỆN TÍCH</div>
     </a>
 
     <a href="section4.html" class="box">
-        Công thức<br><div class="big">THỂ TÍCH</div>
+        Công thức
+        <div class="big">THỂ TÍCH</div>
     </a>
-        <a href="section5.html" class="box">
-        Công thức<br><div class="big">ÁP DỤNG TIN HỌC</div>
+
+    <a href="section5.html" class="box">
+        Công thức
+        <div class="big">TIN HỌC</div>
     </a>
 </div>
-    <h2>Những Nhà Toán Học Vĩ Đại</h2>
 
-    <div class="mathematicians">
+<h2>Những Nhà Toán Học Vĩ Đại</h2>
 
-        <div class="card">
-            <img src="newton.jpg" alt="Isaac Newton">
-            <h3>Isaac Newton</h3>
-            <p>Đồng sáng lập Giải Tích học.</p>
-        </div>
+<div class="mathematicians">
 
-        <div class="card">
-            <img src="leibniz.jpg" alt="Leibniz">
-            <h3>G.W. Leibniz</h3>
-            <p>Người phát minh ký hiệu ∫ và d/dx.</p>
-        </div>
-
-        <div class="card">
-            <img src="euler.jpg" alt="Euler">
-            <h3>Leonhard Euler</h3>
-            <p>Đóng góp lớn cho hàm số mũ và giải tích.</p>
-        </div>
-
+    <div class="card">
+        <img src="newton.jpg">
+        <h3>Isaac Newton</h3>
+        <p>Đồng sáng lập Giải Tích học.</p>
     </div>
-<div class="view-counter">
+
+    <div class="card">
+        <img src="leibniz.jpg">
+        <h3>G.W. Leibniz</h3>
+        <p>Người phát minh ký hiệu ∫ và d/dx.</p>
+    </div>
+
+    <div class="card">
+        <img src="euler.jpg">
+        <h3>Leonhard Euler</h3>
+        <p>Đóng góp lớn cho hàm số mũ và giải tích.</p>
+    </div>
+
+</div>
+
+<div id="view-counter">
 👁 Lượt xem: <span id="busuanzi_value_site_pv">0</span>
 </div>
 
@@ -163,4 +213,3 @@ h2{
 
 </body>
 </html>
-
