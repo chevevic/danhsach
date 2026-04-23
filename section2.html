@@ -59,6 +59,10 @@ header p{
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
+.back-home:hover{
+    transform: translateY(-2px);
+}
+
 /* CONTENT */
 section{
   max-width:900px;
@@ -70,7 +74,12 @@ section{
 h2{
   margin-top:50px;
   font-size:24px;
-  color:white
+  color:white;
+}
+
+h3{
+  color: white;
+  margin-top: 30px;
 }
 
 /* CARD */
@@ -86,12 +95,23 @@ h2{
 
 .card:hover{
   transform: translateY(-4px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* FORMULA */
+/* FORMULA & EXAMPLE */
 .formula{
   font-size:20px;
   text-align:center;
+  font-weight: bold;
+}
+
+.example {
+  font-size: 16px;
+  color: #334155;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #cbd5e1;
+  text-align: center;
 }
 
 /* STEP BOX */
@@ -100,6 +120,7 @@ h2{
   padding:15px;
   border-radius:12px;
   margin:10px 0;
+  border: 1px solid #c7d2fe;
 }
 
 /* FOOTER */
@@ -126,25 +147,74 @@ footer{
 
 <h2>Công thức cơ bản</h2>
 
-<div class="card"><div class="formula">\( \int x^n dx = \frac{x^{n+1}}{n+1} + C \)</div></div>
-<div class="card"><div class="formula">\( \int (u+v)dx = \int u dx + \int v dx \)</div></div>
-<div class="card"><div class="formula">\( \int (u-v)dx = \int u dx - \int v dx \)</div></div>
-<div class="card"><div class="formula">\( \int kf(x)dx = k\int f(x)dx \)</div></div>
+<div class="card">
+    <div class="formula">\( \int x^n dx = \frac{x^{n+1}}{n+1} + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int x^2 dx = \frac{x^3}{3} + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int (u+v)dx = \int u dx + \int v dx \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int (x + \sin x)dx = \frac{x^2}{2} - \cos x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int (u-v)dx = \int u dx - \int v dx \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int (e^x - 1)dx = e^x - x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int kf(x)dx = k\int f(x)dx \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int 5x^4 dx = 5 \int x^4 dx = 5 \cdot \frac{x^5}{5} + C = x^5 + C \)</div>
+</div>
 
 <h2>Lượng giác</h2>
 
-<div class="card"><div class="formula">\( \int \sin x dx = -\cos x + C \)</div></div>
-<div class="card"><div class="formula">\( \int \cos x dx = \sin x + C \)</div></div>
-<div class="card"><div class="formula">\( \int \tan x dx = -\ln|\cos x| + C \)</div></div>
-<div class="card"><div class="formula">\( \int \cot x dx = \ln|\sin x| + C \)</div></div>
+<div class="card">
+    <div class="formula">\( \int \sin x dx = -\cos x + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int 2\sin x dx = -2\cos x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \cos x dx = \sin x + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int \frac{1}{2}\cos x dx = \frac{1}{2}\sin x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \tan x dx = -\ln|\cos x| + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int 3\tan x dx = -3\ln|\cos x| + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \cot x dx = \ln|\sin x| + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int 4\cot x dx = 4\ln|\sin x| + C \)</div>
+</div>
 
 <h2>Hàm mũ & log</h2>
 
-<div class="card"><div class="formula">\( \int e^x dx = e^x + C \)</div></div>
-<div class="card"><div class="formula">\( \int \frac{1}{x} dx = \ln|x| + C \)</div></div>
-<div class="card"><div class="formula">\( \int a^x dx = \frac{a^x}{\ln a} + C \)</div></div>
-<div class="card"><div class="formula">\( \int \frac{1}{1+x^2} dx = \arctan x + C \)</div></div>
-<div class="card"><div class="formula">\( \int \frac{f'(x)}{f(x)} dx = \ln|f(x)| + C \)</div></div>
+<div class="card">
+    <div class="formula">\( \int e^x dx = e^x + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int 7e^x dx = 7e^x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \frac{1}{x} dx = \ln|x| + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int \frac{3}{x} dx = 3\ln|x| + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int a^x dx = \frac{a^x}{\ln a} + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int 3^x dx = \frac{3^x}{\ln 3} + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \frac{1}{1+x^2} dx = \arctan x + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int \frac{2}{1+x^2} dx = 2\arctan x + C \)</div>
+</div>
+
+<div class="card">
+    <div class="formula">\( \int \frac{f'(x)}{f(x)} dx = \ln|f(x)| + C \)</div>
+    <div class="example"><b>Ví dụ:</b> \( \int \frac{2x}{x^2+1} dx = \ln(x^2+1) + C \)</div>
+</div>
 
 <h2>Nguyên hàm từng phần</h2>
 
@@ -159,23 +229,20 @@ footer{
 <div class="step"><b>Bước 3:</b> Tính \( du, v \)</div>
 <div class="step"><b>Bước 4:</b> Thay vào công thức</div>
 
-<h3>Ví dụ</h3>
+<h3>Ví dụ: Tính \( \int x e^x dx \)</h3>
 
-<div class="card"><div class="formula">\( \int x e^x dx \)</div></div>
-
-<div class="step">Chọn \( u = x \Rightarrow du = dx \)</div>
-<div class="step">\( dv = e^x dx \Rightarrow v = e^x \)</div>
+<div class="step"><b>Bước 1 & 2:</b> Chọn \( u = x \Rightarrow du = dx \). Phần còn lại \( dv = e^x dx \Rightarrow v = e^x \)</div>
 
 <div class="card">
-<div class="formula">\( = x e^x - \int e^x dx \)</div>
+    <div class="formula">\( \int x e^x dx = x e^x - \int e^x dx \)</div>
 </div>
 
 <div class="card">
-<div class="formula">\( = x e^x - e^x + C \)</div>
+    <div class="formula">\( = x e^x - e^x + C \)</div>
 </div>
 
 <div class="card">
-<div class="formula">\( = e^x(x-1) + C \)</div>
+    <div class="formula">\( = e^x(x-1) + C \)</div>
 </div>
 
 </section>

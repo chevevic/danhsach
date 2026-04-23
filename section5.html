@@ -8,7 +8,8 @@
 <script>
 window.MathJax = {
   tex: {
-    inlineMath: [['\\(','\\)']]
+    inlineMath: [['\\(', '\\)'], ['$' , '$']],
+    displayMath: [['$$', '$$']]
   }
 };
 </script>
@@ -36,6 +37,7 @@ header{
 header h1{
   margin:0;
   font-size:36px;
+  font-weight:700;
 }
 
 header p{
@@ -56,6 +58,7 @@ header p{
     font-weight: 600;
     border:1px solid #e2e8f0;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    z-index: 1000;
 }
 
 /* CONTENT */
@@ -65,11 +68,10 @@ section{
   padding:20px;
 }
 
-/* TITLE */
 h2{
   margin-top:50px;
   font-size:24px;
-  color:white
+  color:white;
 }
 
 /* CARD */
@@ -87,33 +89,39 @@ h2{
   transform: translateY(-4px);
 }
 
-/* FORMULA */
 .formula{
   font-size:20px;
   text-align:center;
+  font-weight: bold;
 }
 
-/* DESC */
 .desc{
   margin-top:8px;
   font-size:14px;
-  color:#475569;
+  color:#4f46e5;
+  font-weight: 600;
   text-align:center;
 }
 
-/* CODE STYLE BOX */
+.example {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #cbd5e1;
+}
+
 .code{
   background:#0f172a;
   color:#e2e8f0;
   padding:12px;
   border-radius:10px;
-  font-family: monospace;
-  font-size:14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:13px;
   margin-top:10px;
   overflow-x:auto;
 }
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:25px;
@@ -138,79 +146,69 @@ footer{
 <h2>Diện tích & thể tích</h2>
 
 <div class="card">
-<div class="formula">\( S = a \cdot b \)</div>
-<div class="desc">Hình chữ nhật</div>
+    <div class="formula">\( S = a \times b \)</div>
+    <div class="desc">Hình chữ nhật</div>
+    <div class="example"><b>Code:</b> <code>long long S = 1LL * a * b;</code> (Dùng 1LL để ép kiểu tránh tràn số 32-bit)</div>
 </div>
 
 <div class="card">
-<div class="formula">\( S = \pi r^2 \)</div>
-<div class="desc">Hình tròn</div>
+    <div class="formula">\( S = \pi \times r^2 \)</div>
+    <div class="desc">Hình tròn</div>
+    <div class="example"><b>Code:</b> <code>double S = M_PI * r * r;</code> (M_PI có sẵn trong thư viện cmath)</div>
 </div>
 
 <div class="card">
-<div class="formula">\( V = a^3 \)</div>
-<div class="desc">Lập phương</div>
+    <div class="formula">\( V = a^3 \)</div>
+    <div class="desc">Lập phương</div>
+    <div class="example"><b>Ví dụ:</b> \( a=5 \Rightarrow V = 125 \)</div>
 </div>
 
 <div class="card">
-<div class="formula">\( V = \pi r^2 h \)</div>
-<div class="desc">Hình trụ</div>
+    <div class="formula">\( V = \pi \times r^2 \times h \)</div>
+    <div class="desc">Hình trụ</div>
+    <div class="example"><b>Ví dụ:</b> \( r=2, h=3 \Rightarrow V \approx 37.7 \)</div>
 </div>
 
-<h2>Geometry (cực quan trọng)</h2>
+<h2>Geometry (Hình học tọa độ)</h2>
 
 <div class="card">
-<div class="formula">\( d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \)</div>
-<div class="desc">Khoảng cách 2 điểm</div>
-</div>
-
-<div class="card">
-<div class="formula">\( cross(A,B) = x_1y_2 - x_2y_1 \)</div>
-<div class="desc">Tích có hướng (xác định quay trái/phải)</div>
-
-<div class="code">
-if (cross > 0) left turn  
-if (cross < 0) right turn
-</div>
+    <div class="formula">\( d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} \)</div>
+    <div class="desc">Khoảng cách Euclid</div>
+    <div class="example"><b>Code:</b> <code>hypot(x2-x1, y2-y1);</code></div>
 </div>
 
 <div class="card">
-<div class="formula">
-\( S = \frac{1}{2} |\sum x_i y_{i+1} - x_{i+1} y_i| \)
-</div>
-<div class="desc">Shoelace formula (diện tích đa giác)</div>
-</div>
-
-<h2>Tổ hợp</h2>
-
-<div class="card">
-<div class="formula">\( n! \)</div>
-<div class="desc">Giai thừa</div>
+    <div class="formula">\( cross = x_1y_2 - x_2y_1 \)</div>
+    <div class="desc">Tích có hướng (Cross Product)</div>
+    <div class="code">
+        if (cross > 0) // Quay trái (Counter-clockwise)<br>
+        if (cross < 0) // Quay phải (Clockwise)<br>
+        if (cross == 0) // Thẳng hàng
+    </div>
 </div>
 
 <div class="card">
-<div class="formula">\( C(n,k) = \frac{n!}{k!(n-k)!} \)</div>
-<div class="desc">Tổ hợp</div>
+    <div class="formula">
+        \( S = \frac{1}{2} |\sum (x_i y_{i+1} - x_{i+1} y_i)| \)
+    </div>
+    <div class="desc">Shoelace formula (Diện tích đa giác)</div>
+    <div class="example"><b>Ứng dụng:</b> Tính diện tích khi biết tọa độ N đỉnh.</div>
+</div>
+
+<h2>Tổ hợp & Thuật toán</h2>
+
+<div class="card">
+    <div class="formula">\( C(n,k) = \frac{n!}{k!(n-k)!} \)</div>
+    <div class="desc">Tổ hợp (Combinations)</div>
+    <div class="example"><b>Lưu ý:</b> Nên tính bằng Pascal Triangle hoặc nghịch đảo modulo để tránh tràn số giai thừa.</div>
 </div>
 
 <div class="card">
-<div class="formula">\( C(n,k) = C(n-1,k) + C(n-1,k-1) \)</div>
-<div class="desc">Công thức Pascal</div>
-</div>
-
-<h2>Convex Hull</h2>
-
-<div class="card">
-<div class="formula">Graham Scan</div>
-<div class="desc">Độ phức tạp: \(O(n \log n)\)</div>
-
-<div class="code">
-sort(points)
-for p in points:
-    while hull turns right:
-        pop()
-    push(p)
-</div>
+    <div class="formula">Bao lồi (Convex Hull)</div>
+    <div class="desc">Thuật toán Graham Scan / Monotone Chain</div>
+    <div class="code">
+        // Sắp xếp điểm theo x, sau đó duyệt xây dựng phần bao trên và bao dưới bằng stack.
+    </div>
 </div>
 
 </section>
